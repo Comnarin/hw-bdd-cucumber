@@ -45,6 +45,18 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def search_tmdb
+    movie_title = params[:movie][:title]
+    @movie = Movie.where(title: movie_title)
+    puts @movie
+    if @movie == "Inception"
+      redirect_to movie_path(@movie)
+    else
+      flash[:notice] = "Movie '#{movie_title}' was not found in TMDb." 
+      redirect_to movies_path
+    end
+  end
+
   private
 
   def movie_params
@@ -70,4 +82,5 @@ class MoviesController < ApplicationController
   def sort_by
     params[:sort_by] || session[:sort_by] || 'id'
   end
+  
 end
