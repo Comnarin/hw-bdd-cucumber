@@ -20,7 +20,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
   gem 'rspec-rails'
-
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-byebug'
 
@@ -40,3 +40,8 @@ group :production do
   gem 'pg', '~> 0.2'
   gem 'rails_12factor'
 end
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection", "~> 1.0"

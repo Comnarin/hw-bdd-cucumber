@@ -62,7 +62,6 @@ Then /I should see all the movies/ do
   end
 
  
-
 end
 
 ### Utility Steps Just for this assignment.
